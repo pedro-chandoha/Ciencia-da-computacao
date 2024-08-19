@@ -1,7 +1,7 @@
 function exercicio1() {
     let nota = parseInt(prompt("Digite uma nota de 1 a 10: "));
     console.log("A nota digitada foi",nota);
-    while(nota >10 || nota <1 || isNaN(nota) || num.trim() === ''){
+    while(nota >10 || nota <1 || isNaN(nota) || nota.trim() === ''){
         nota = prompt("Valor invalido, digite novamente: ");
     }
 
@@ -23,25 +23,38 @@ function exercicio2(){
 }
 
 function exercicio3(){
-    // Solicita ao usuário o número de notas
-const N = parseInt(prompt("Digite o número de notas: "));
+let N = parseInt(prompt("Digite o número de notas: "));
 
-// Inicializa a soma das notas
 let soma = 0;
 
-// Loop para ler as notas
 for (let i = 0; i < N; i++) {
-  const nota = parseFloat(prompt(`Digite a nota ${i + 1}: `));
+  let nota = parseFloat(prompt(`Digite a nota ${i + 1}: `));
   soma += nota;
 }
 
-// Calcula a média aritmética
-const media = soma / N;
+let media = soma / N;
 
-// Mostra o resultado
 alert(`A média aritmética é: ${media.toFixed(2)}`);
     
 }
 function exercicio4(){
-    let numero = prompt("Digite um numero inteiro: ");
+    const numero = parseInt(prompt("Digite um número inteiro: "));
+
+function ehPrimo(numero) {
+  if (numero <= 1) {
+    return false;
+  }
+  for (let i = 2; i * i <= numero; i++) {
+    if (numero % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+if (ehPrimo(numero)) {
+  console.log(`${numero} é um número primo!`);
+} else {
+  console.log(`${numero} não é um número primo.`);
+}
 }
