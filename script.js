@@ -23,6 +23,23 @@ function exercicio2(){
 }
 
 function exercicio3(){
+    // Solicita ao usuário o número de notas
+const N = parseInt(prompt("Digite o número de notas: "));
+
+// Inicializa a soma das notas
+let soma = 0;
+
+// Loop para ler as notas
+for (let i = 0; i < N; i++) {
+  const nota = parseFloat(prompt(`Digite a nota ${i + 1}: `));
+  soma += nota;
+}
+
+// Calcula a média aritmética
+const media = soma / N;
+
+// Mostra o resultado
+alert(`A média aritmética é: ${media.toFixed(2)}`);
     
 }
 function exercicio4(){
