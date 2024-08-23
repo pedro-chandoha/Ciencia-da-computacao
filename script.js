@@ -1,60 +1,70 @@
 function exercicio1() {
-    let nota = parseInt(prompt("Digite uma nota de 1 a 10: "));
-    console.log("A nota digitada foi",nota);
-    while(nota >10 || nota <1 || isNaN(nota) || nota.trim() === ''){
-        nota = prompt("Valor invalido, digite novamente: ");
-    }
+  let nota = prompt("Digite uma nota de 1 a 10: ");
+  console.log("A nota digitada foi",nota);
+  while(nota >10 || nota <1 || isNaN(nota) || nota.trim() === ''){
+      nota = prompt("Valor invalido, digite novamente: ");
+  }
+  nota = parseInt(nota);
 
-    console.log("Nota valida")
+  alert("Nota valida")
+  console.log("Nota válida")
 }
 
 function exercicio2(){
-    let nomeUsuario = prompt("Digite seu nome: ");
-    let senhaUsuario = prompt("Digite sua senha: ");
-    while(nomeUsuario.trim()===""){
-        nomeUsuario = prompt("Valor vazio, digite novamente: ");
-    }
-    while((senhaUsuario.trim()==="") || senhaUsuario==nomeUsuario){
-        senhaUsuario = prompt("Sua senha não pode ser seu nome, digite novamente: ");
-    }
+  let nomeUsuario = prompt("Digite seu nome: ");
+  let senhaUsuario = prompt("Digite sua senha: ");
+  while(nomeUsuario.trim()===""){
+      nomeUsuario = prompt("Valor vazio, digite novamente: ");
+  }
+  while((senhaUsuario.trim()==="") || senhaUsuario==nomeUsuario){
+      senhaUsuario = prompt("Sua senha não pode ser seu nome, digite novamente: ");
+  }
 
-    console.log("Login Aceito");
-
+  alert("Login Aceito");
+  console.log("Login Aceito")
 }
 
 function exercicio3(){
-let N = parseInt(prompt("Digite o número de notas: "));
-
+let N = prompt("Digite o número de notas: ");
+while(N<1 || N.trim()==='' || isNaN(N)){
+  N = prompt("Valor inválido digite novamente: ");
+}
+N = parseInt(N);
 let soma = 0;
 
 for (let i = 0; i < N; i++) {
-  let nota = parseFloat(prompt(`Digite a nota ${i + 1}: `));
-  soma += nota;
+let nota = prompt(`Digite a nota ${i + 1}: `);
+while(nota<0 || nota.trim()==='' || isNaN(nota)){
+  nota = prompt("Nota inválida, digite novamente: ");
+  
+}
+nota = parseFloat(nota);
+soma += nota;
 }
 
 let media = soma / N;
 
 alert(`A média aritmética é: ${media.toFixed(2)}`);
-    
+  
 }
 function exercicio4(){
-    const numero = parseInt(prompt("Digite um número inteiro: "));
+  const numero = parseInt(prompt("Digite um número inteiro: "));
 
 function ehPrimo(numero) {
-  if (numero <= 1) {
+if (numero <= 1) {
+  return false;
+}
+for (let i = 2; i * i <= numero; i++) {
+  if (numero % i === 0) {
     return false;
   }
-  for (let i = 2; i * i <= numero; i++) {
-    if (numero % i === 0) {
-      return false;
-    }
-  }
-  return true;
+}
+return true;
 }
 
 if (ehPrimo(numero)) {
-  console.log(`${numero} é um número primo!`);
+console.log(`${numero} é um número primo!`);
 } else {
-  console.log(`${numero} não é um número primo.`);
+console.log(`${numero} não é um número primo.`);
 }
 }
