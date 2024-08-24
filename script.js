@@ -48,23 +48,27 @@ alert(`A média aritmética é: ${media.toFixed(2)}`);
   
 }
 function exercicio4(){
-  const numero = parseInt(prompt("Digite um número inteiro: "));
-
-function ehPrimo(numero) {
-if (numero <= 1) {
-  return false;
-}
-for (let i = 2; i * i <= numero; i++) {
-  if (numero % i === 0) {
-    return false;
+  let num = prompt("Digite um numero inteiro para ver se é primo ou não:");
+  while(num<1 || isNaN(num) || num.trim === ''){
+  num = prompt("Valor inválido digite novamente: ");
   }
-}
-return true;
-}
-
-if (ehPrimo(numero)) {
-console.log(`${numero} é um número primo!`);
-} else {
-console.log(`${numero} não é um número primo.`);
-}
+  let SimOuNao;
+  let cont = 0;
+  for (let i = 1; i <= num; i++) {
+      if (num % i === 0) {
+          cont++;            
+          if (cont > 2) {
+              SimOuNao = false;
+          }else{
+              SimOuNao = true;
+          }
+      }
+  }
+  if(SimOuNao){
+      alert("O numero é primo! ");
+      console.log("O numero é primo! ");
+  }else{
+      alert("O numero não é primo! ");
+      console.log("O numero não é primo!");
+  }
 }
