@@ -52,6 +52,7 @@ function exercicio4(){
   while(num<1 || isNaN(num) || num.trim === ''){
   num = prompt("Valor inválido digite novamente: ");
   }
+  num = parseInt(num);
   let SimOuNao;
   let cont = 0;
   for (let i = 1; i <= num; i++) {
